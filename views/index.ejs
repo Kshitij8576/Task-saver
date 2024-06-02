@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class=" bg-zinc-600 ">
+    <form action="/create" method="post" class="inp p-10 text-white ">
+        <input class=" block outline-none rounded-md w-full bg-zinc-800 px-5 py-2" type="text " placeholder="Enter your task title" name="title">
+        <textarea class="block outline-none rounded-md w-full mt-3 px-5 py-2 resize-none bg-zinc-800" placeholder="Enter task content..." name="details"></textarea>
+        <input class="bg-blue-500 px-5 py-2 rounded-md mt-3" type="submit" value="Create task">
+    </form>
+    <div class="card p-10 flex flex-wrap gap-5">
+       
+        <% if(files.length>0){ %>
+            <% files.forEach(function(val){ %>
+                <div class="task min-w-72 px-3 py-4 rounded-md bg-zinc-800">
+                    <h1 class="text-3xl text-white"><%= val %></h1>
+                    <a href="/file/<%= val %>" class="text-blue-500">Read more...</a>
+                </div>
+            <% })} else{ %>
+                <h2 class="text-zinc-300">No task yet...</h2>
+        <% } %>
+
+        
+        
+    </div>
+</body>
+</html>
